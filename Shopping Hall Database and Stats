@@ -1,0 +1,27 @@
+--Create a shopping hall store database
+
+create table STORE (Barcode Integer primary key, item text, quantity integer, aisle integer, designer text, Price integer, cartegory text);
+
+insert into STORE values (1, "gowns", 50, 1, "VK", 25000, "F");
+insert into store values (2, "tops", 28, 1, "VK", 12000, "F");
+insert into store values (3, "skirts", 10, 2, "LV", 15000, "F");
+insert into store values (4, "female trousers", 22, 2, "CK", 20000, "F");
+insert into store values (5, "tops", 28, 3, "Vant", 13000, "M");
+insert into store values (6, "trousers", 44,3, "Roger", 13500, "M");
+insert into store values (7, "skirt", 19, 3, "Mace", 9500, "M");
+insert into store values (8, "pot",37,4,"Kenwood",6500, "cookware");
+insert into store values (9, "mixer",8,4,"Brielle",95000,"cookware");
+insert into store values (10, "pans",50,4,"Konta",3500,"cookware");
+insert into store values (11,"guns",100,5,"Ace",12500,"toys");
+insert into store values (12, "dolls", 128,5,"Ace",10250,"toys");
+insert into store values (13, "tissue paper",50,6,"Beems", 1525, "toiletries");
+insert into store values (14, "toothpaste",125,6,"Coke",567,"toiletries");
+insert into store values (15, "toothbrush",88,6,"Pank",50,"toiletries");
+
+--display items on aisles numbered 4 and above and ordered by price.
+select * from store
+where aisle >= 4
+order by price;
+ 
+ --display total number of items in the store.
+ select sum(quantity) from store;
